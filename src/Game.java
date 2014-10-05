@@ -265,7 +265,7 @@ public class Game implements KeyListener {
     
     public void loadImages() {
         // loads images into buffer
-        bgImage = loadImage("images/newbackground.jpg"); // Background Image
+        bgImage = loadImage("images/Background1.png"); // Background Image
         headerBar = loadImage("images/headerBarBlue.png"); // Header Image
         healthIcon = loadImage("images/healthIcon.png"); // Health Icon
         healthBar = loadImage("images/healthBar.png"); // Health Bar full
