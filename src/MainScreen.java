@@ -80,7 +80,7 @@ public class MainScreen {
     	//End added for testing purposes.
     	
     	// loads images into buffer
-         bgImage = loadImage("images/mainScreen.jpg");
+         bgImage = loadImage("images/homeScreen2.jpg");
           //title = loadImage("images/title.png");
 		//add animation here for start screen
     }
@@ -171,20 +171,20 @@ public class MainScreen {
     	g.drawImage(bgImage, 0, 0, null);
    	    g.drawImage(title, 170,120,null);
    		Font f = g.getFont();
-   		g.setFont(new Font("SansSerif", Font.BOLD, 15));
+   		g.setFont(new Font("SansSerif", Font.BOLD, 20));
    		
-		  g.setColor(Color.black);
-          g.drawString("Space Bar To Start",350,400);
+		  g.setColor(Color.white);
+          g.drawString("Space Bar To Start",290,550);
           g.setFont(f);
-          g.setFont(new Font("SansSerif", Font.BOLD, 15));
-          g.drawString("(H) Help Screen",350,435);
+          g.setFont(new Font("SansSerif", Font.BOLD, 20));
+          g.drawString("(H) Help Screen",290,575);
           g.setFont(f);
    	   	  //g.drawString("Press O for Options",260,448);
    	   	  
    	   	  
-		  g.setColor(Color.black);
-		  g.setFont(new Font("SansSerif", Font.BOLD, 15));
-   	   	  g.drawString("Press Esc to Exit",350,470);
+		  g.setColor(Color.white);
+		  g.setFont(new Font("SansSerif", Font.BOLD, 20));
+   	   	  g.drawString("Press Esc to Exit",290,600);
    	   	  g.setFont(f);
    	   	  
    	   	  //Added for testing purposes.
