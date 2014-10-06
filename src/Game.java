@@ -106,6 +106,8 @@ public class Game implements KeyListener {
     protected Image forwardslash = loadImage("images/keys/FORWARDSLASH.png");
     protected Image shift = loadImage("images/keys/SHIFT.png");
 
+    protected Image spaceBarKey = loadImage("images/keys/SPACEBAR.png");
+
     
     //Used to count shots before un-paralyzed (Start of un-paralyzed)
     int PARALYZED = 4; //edit this to change amount of shots until un-paralyzed
@@ -748,14 +750,14 @@ public class Game implements KeyListener {
 		{
 			drawTutorial(g);
 			g.setColor(Color.white);
-			g.drawString("Press 'T' to exit tutorial mode", 300, 562);
+			g.drawString("Press 'C' to view the controls", 300, 562);
 			g.setColor(Color.black);
-			g.drawString("Tutorial Mode", 355, 45);
+			g.drawString("Game Controls", 355, 45);
 		}
 		else
 		{
 			g.setColor(Color.white);
-			g.drawString("Press 'T' to enter tutorial mode", 300, 562);
+			g.drawString("Press 'C' to view the controls", 300, 562);
 		}
 		
 		g.setColor(Color.white);
@@ -822,25 +824,26 @@ public class Game implements KeyListener {
 	        g.drawString("to move!", barX+80, barY+shifty);
 	        g.drawString("to aim!", barX+80, barY);
 	        g.drawString("to adjust power!", barX+80, barY-shifty);
-	        g.drawString("to change weapon!", barX+80, barY-(2*shifty));
-	        g.drawImage(blackarrowup, 30, 110, null);
+	        //2014 g.drawString("to change weapon!", barX+80, barY-(2*shifty));
+            g.drawString("to fire!", barX+80, barY-(2*shifty)+6);
+	     // g.drawImage(blackarrowup, 30, 110, null);
 	        
 	        // Fire
-	        g.drawImage(F, 170, 75 ,null);
-	        g.drawString("to fire!", 210, 100);        
+	        g.drawImage(spaceBarKey, barX, barY-105 ,null);
+	        //2014 g.drawString("to fire!", 210, 100);        
 	        // Change Weapon
-	        g.drawImage(R, barX, barY-115, null);
+	        //2014 g.drawImage(R, barX, barY-115, null);
 	        // Power
-	        g.drawImage(Q, barX, barY-65, null);
-	        g.drawImage(E, barX+35, barY-65, null);  
+	        g.drawImage(comma, barX, barY-65, null);
+	        g.drawImage(period, barX+35, barY-65, null);  
 	        // Aim
-	        g.drawImage(W, barX, barY-15, null);
-	        g.drawImage(S, barX+35, barY-15, null);
+	        g.drawImage(up, barX, barY-15, null);
+	        g.drawImage(down, barX+35, barY-15, null);
 	        // Move
-	        g.drawImage(A, barX, barY+35, null);
-	        g.drawImage(D, barX+35, barY+35, null);
+	        g.drawImage(left, barX, barY+35, null);
+	        g.drawImage(right, barX+35, barY+35, null);
 	        
-	        g.drawString("Ammo", 10, 160);
+	     // g.drawString("Ammo", 10, 160);
 	        
         }
         else if (turn == 2)
@@ -853,21 +856,22 @@ public class Game implements KeyListener {
 
 	        } */
         	
-        //	g.drawString("to change weapon!", barX+80, barY+55);
-        	g.drawImage(blackarrowup, 775, 110, null);
-        	g.drawString("Ammo", 750, 160);
+         //2014 g.drawString("to change weapon!", barX+80, barY+55);
+         //2014 g.drawImage(blackarrowup, 775, 110, null);
+         //2014 g.drawString("Ammo", 750, 160);
         	
 	        g.drawString("to move!", barX+80, barY+shifty);
 	        g.drawString("to aim!", barX+80, barY);
 	        g.drawString("to adjust power!", barX+80, barY-shifty);
-	        g.drawString("to change weapon!", barX+80, barY-(2*shifty));
-	       // g.drawImage(blackarrowup, 30, 110, null);
+	        //2014 g.drawString("to change weapon!", barX+80, barY-(2*shifty));
+            g.drawString("to fire!", barX+80, barY-(2*shifty)+6);
+	     //2014 g.drawImage(blackarrowup, 30, 110, null);
 	        
 	        // Fire
-	        g.drawImage(shift, 570, 75 ,null);
-	        g.drawString("to fire!", 525, 100);        
+	        g.drawImage(spaceBarKey, barX, barY-105 ,null);
+	     //2014 g.drawString("to fire!", 525, 100);        
 	        // Change Weapon
-	        g.drawImage(forwardslash, barX, barY-115, null);
+	        //2014 g.drawImage(forwardslash, barX, barY-115, null);
 	        // Power
 	        g.drawImage(comma, barX, barY-65, null);
 	        g.drawImage(period, barX+35, barY-65, null);  
@@ -1080,7 +1084,7 @@ Mode 3 is Weapon Selection
           DataClass.setwind(WindVar);
       }  
    
-      if (keyCode == KeyEvent.VK_SPACE)  { // Resets game
+      if (keyCode == KeyEvent.VK_L)  { // Resets game
     	  //This will reset the terrain, replenish both player's health and set turn to player 1.
     	  //Set Y sets the tanks to start on the ground
           //Therefore not falling and losing health
@@ -1157,7 +1161,7 @@ Mode 3 is Weapon Selection
   
             if (GameSTATE==1)      // Fuel Turn-Based Mode
             {
-                if (keyCode == KeyEvent.VK_T) 
+                if (keyCode == KeyEvent.VK_C) 
                 {
               	  tutorialmode = !(tutorialmode);
               	  
@@ -1166,7 +1170,7 @@ Mode 3 is Weapon Selection
                 if (turn==1) // Player one's turn
                 {
                 	//Angle Control
-                 if (keyCode == KeyEvent.VK_W) 
+                 if (keyCode == KeyEvent.VK_UP) 
                  {
                 	 Mode1 = 1;
                 	 // Tank1.increaseAngle();	
@@ -1181,7 +1185,7 @@ Mode 3 is Weapon Selection
              		
                   } 
                  
-                  if (keyCode == KeyEvent.VK_S) 
+                  if (keyCode == KeyEvent.VK_DOWN) 
                   {
                 	  Mode1 = 1;
       	      		//  Tank1.decreaseAngle();	
@@ -1208,7 +1212,7 @@ Mode 3 is Weapon Selection
                     
 
                     //Power
-                   if (keyCode == KeyEvent.VK_E) 
+                   if (keyCode == KeyEvent.VK_PERIOD) 
                    {
                 	   Mode1 = 2;
                  	   if(e.isControlDown())
@@ -1219,7 +1223,7 @@ Mode 3 is Weapon Selection
                  	  		Tank1.setShotPower(-1);
                  	   }
                   }          
-                   if (keyCode == KeyEvent.VK_Q) 
+                   if (keyCode == KeyEvent.VK_COMMA) 
                    {
                 	   Mode1 = 2;
                 	   if(e.isControlDown())
@@ -1236,7 +1240,7 @@ Mode 3 is Weapon Selection
 
 
                    //MOVEMENT
-                   if ((keyCode == KeyEvent.VK_A) && (curfuel > 0)) //This will move the tank if the left key is pressed and fuel isn't empty.
+                   if ((keyCode == KeyEvent.VK_LEFT) && (curfuel > 0)) //This will move the tank if the left key is pressed and fuel isn't empty.
                    {  
                 	   Mode1 = 0;
                         //if(Tank1.getMovesLeft()>0) {
@@ -1250,13 +1254,13 @@ Mode 3 is Weapon Selection
                             }
                         //}
                    }             
-                   if ((keyCode == KeyEvent.VK_A) && (curfuel <= 0)) // If the left key is pressed and fuel is empty: Don't move
+                   if ((keyCode == KeyEvent.VK_LEFT) && (curfuel <= 0)) // If the left key is pressed and fuel is empty: Don't move
                    {  
                 	   Mode1 = 0;
                       moving = false;
                    }
                   
-                   if ((keyCode == KeyEvent.VK_D) && (curfuel > 0)) 
+                   if ((keyCode == KeyEvent.VK_RIGHT) && (curfuel > 0)) 
                    {
                 	   Mode1 = 0;
                         //if(Tank1.getMovesLeft()>0) {
@@ -1271,12 +1275,12 @@ Mode 3 is Weapon Selection
                             }
                         //}
                             }
-                   if ((keyCode == KeyEvent.VK_D) && (curfuel <= 0)){
+                   if ((keyCode == KeyEvent.VK_RIGHT) && (curfuel <= 0)){
                       moving = false;
                   }
                   
                   
-                  if (keyCode == KeyEvent.VK_F) //When F is pressed, the turn will switch to the other player
+                  if (keyCode == KeyEvent.VK_SPACE) //When F is pressed, the turn will switch to the other player
                   {
                      // carfuel = 110; //This will make sure the other player has full fuel at the beginning of his/her turn.
                       System.out.println(curfuel);
@@ -1446,7 +1450,7 @@ Mode 3 is Weapon Selection
                 
 
                   //Shooting
-                  if (keyCode == KeyEvent.VK_SHIFT)
+                  if (keyCode == KeyEvent.VK_SPACE)
                   {
                       //curfuel = 110; //Makes sure that the other play will have full fuel at the beginning of his/her turn
                       System.out.println(curfuel);
