@@ -281,11 +281,11 @@ public class Game implements KeyListener {
         weaponHersco = loadImage("images/weaponHersco.png");
         weaponNuclear = loadImage("images/weaponNuclear.png");
         weaponJoker = loadImage("images/weaponJoker.png");
-       // modemove = loadImage("images/MMode.png");
-       // modeangle = loadImage("images/TMode.png");
-       // modepower = loadImage("images/PMode.png");
-       // modeweapon = loadImage("images/WMode.png");
-       // modeBG = loadImage("images/ModeBG.png");
+        modemove = loadImage("images/MMode.png");
+        modeangle = loadImage("images/TMode.png");
+       modepower = loadImage("images/PMode.png");
+        modeweapon = loadImage("images/WMode.png");
+        modeBG = loadImage("images/ModeBG.png");
         
         TankImage = loadImage(DataClass.getP1Tank());
         TankImage2 = loadImage(DataClass.getP2Tank());
