@@ -24,7 +24,7 @@ public class MainScreen {
     protected static Boolean testMode = false;
     protected static Boolean testVar = false;
     protected static int testLoop = 1;
-    public static MusicPlayer music;
+    //*public static MusicPlayer music;
     protected static ScreenManager testScreen1, testScreen2;
     //End of variables for testing purposes.    
     
@@ -46,8 +46,8 @@ public class MainScreen {
     	StartScreen = new ScreenManager();;
         try {
         	//Initializes music for main screen
-        	music = new MusicPlayer(Game.titleMusic);
-			music.l();
+        	//*music = new MusicPlayer(Game.titleMusic);
+			//*music.l();
         	
             DisplayMode displayMode =
             StartScreen.findFirstCompatibleMode(POSSIBLE_MODES);
@@ -203,7 +203,7 @@ public class MainScreen {
 		//try to create a new object with user interaction for next goal.
 	      if (keyCode == KeyEvent.VK_SPACE) 
 	      {	
-	      	  music.s();
+	      	  //*music.s();
 	      	  
 	      	//  music = new SoundPlayer();
 	      	//  music.load("doom_1.mid");
@@ -222,7 +222,7 @@ public class MainScreen {
 	     else if (keyCode == KeyEvent.VK_H)
 	     {
 	    	  System.out.println("H key pressed");
-	    	  music.s();
+	    	 //* music.s();
 	    	  setStart = 2;
 	     }
 	      
