@@ -207,21 +207,13 @@ public class HelpScreen {
 		  g.setColor(Color.black);
 		  if(p1Color > 0) 
 		  g.drawString("" + tankColors[p1Color-1], 475, 310);
-		  g.setColor(Color.black);
-		  g.drawString("" + tankColors[p1Color], 1000,  310);
-		  if(p2Color > 0) 
+		   if(p2Color > 0) 
 		  g.drawString("" + tankColors[p2Color-1], 475, 330);
-		  g.setColor(Color.black);
-		  g.drawString("" + tankColors[p2Color], 1000,  330);
 		  if(p1Color < 4) 
 		  g.drawString("" + tankColors[p1Color+1], 475, 310);
-		  g.setColor(Color.black);
-		  g.drawString("" + tankColors[p1Color], 1000, 310);
-		  if(p2Color < 4) 
+		   if(p2Color < 4) 
 		  g.drawString("" + tankColors[p2Color+1], 475, 330);
-		  g.setColor(Color.black);
-		  g.drawString("" + tankColors[p2Color], 1000, 330);
-		
+		 	
 	
 	  g.setColor(Color.white);
 	  g.drawString("" + tankColors[p1Color], 475, 310);

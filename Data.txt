@@ -5,5 +5,5 @@ Wind 0
 Player1Health 200
 Player2Health 200
 Start 0
-player1Tank 1
-player2Tank 3
+player1Tank 2
+player2Tank 0
