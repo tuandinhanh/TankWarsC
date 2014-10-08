@@ -204,7 +204,7 @@ public class HelpScreen {
 		  g.drawString("P2 Tank Color: Left/Right Arrows", 200, 330);
 
 		  
-		  g.setColor(Color.white);
+		  g.setColor(Color.black);
 		  if(p1Color > 0) 
 		  g.drawString("" + tankColors[p1Color-1], 475, 310);
 		  g.setColor(Color.black);
