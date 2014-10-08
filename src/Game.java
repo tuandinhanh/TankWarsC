@@ -283,11 +283,11 @@ public class Game implements KeyListener {
         weaponHersco = loadImage("images/weaponHersco.png");
         weaponNuclear = loadImage("images/weaponNuclear.png");
         weaponJoker = loadImage("images/weaponJoker.png");
-        modemove = loadImage("images/MMode.png");
-        modeangle = loadImage("images/TMode.png");
-       modepower = loadImage("images/PMode.png");
-        modeweapon = loadImage("images/WMode.png");
-        modeBG = loadImage("images/ModeBG.png");
+       // modemove = loadImage("images/MMode.png");
+       // modeangle = loadImage("images/TMode.png");
+       // modepower = loadImage("images/PMode.png");
+       // modeweapon = loadImage("images/WMode.png");
+       // modeBG = loadImage("images/ModeBG.png");
         
         TankImage = loadImage(DataClass.getP1Tank());
         TankImage2 = loadImage(DataClass.getP2Tank());
@@ -1749,7 +1749,7 @@ Mode 3 is Weapon Selection
         int healthBar2Value = (int) (110 - (Tank2.getHealth()*1.1)); //Used to determine how much of player 2's health bar is covered
         int healthBar2Display = (int) (Tank2.getHealth());  // Used to display the number value of player 2's health
         
-        g.drawImage(healthIcon, 652, 28, null); // health icon
+        g.drawImage(healthIcon, 652, 29, null); // health icon
         g.drawImage(healthBar, healthBar2X, healthBar2Y, null); // health bar
         g.setFont(new Font("SansSerif", Font.BOLD, 20)); // Sets the font and size of the displayed number
         g.setColor(Color.darkGray); // Makes the rectangle that covers health dark gray
@@ -1807,11 +1807,10 @@ Mode 3 is Weapon Selection
             g.drawString("Controls:", textAlignLeft, 140);
             g.setFont(f);
             g.setColor(Color.black);
-            g.drawString("t: enter tutorial mode to view the controls.", textAlignLeft, 165);
-            g.drawString("Spacebar: restart the round", textAlignLeft, 190);
-            g.drawString("z: before a game starts, this will change the terrain", textAlignLeft, 215);
-            g.drawString("Control: hold to accelerate adjusting power/angle",textAlignLeft, 240);
-            g.drawString("m: mute/unmute music", textAlignLeft, 265);
+            g.drawString("C: enter a mode to view the controls.", textAlignLeft, 165);
+            g.drawString("L: restart the round", textAlignLeft, 190);
+            g.drawString("Z: before a game starts, this will change the terrain", textAlignLeft, 215);
+            g.drawString("M: mute/unmute music", textAlignLeft, 240);
     //       g.drawString("Spacebar to fire & end turn.", textAlignLeft, 290);
             g.setColor(Color.darkGray);
             g.setFont(new Font("SansSerif", Font.BOLD, 14));

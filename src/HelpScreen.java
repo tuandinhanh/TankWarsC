@@ -19,7 +19,7 @@ public class HelpScreen {
 
     public HelpScreen() {
     }
-     //public static MusicPlayer music;
+     public static MusicPlayer music;
      public static ScreenManager HelpScreen;
      public static Image bgImage;
      public static Image title;
@@ -29,8 +29,8 @@ public class HelpScreen {
      public static String tankColors[] = {"Green", "Red", "Blue", "Yellow", "White"};
      public static int p1Color = 0;
      public static int p2Color = 1;
-     //*public static int tracknumber;
-     //*public static String song;
+     public static int tracknumber;
+     public static String song;
      public static DataClass dc = new DataClass();
     // public static JTextArea Name1 = new JTextArea();
     // public static String player1Name="Player 1";
@@ -53,11 +53,11 @@ public class HelpScreen {
      
      public void run() {
     	HelpScreen = new ScreenManager();;
-    	//*tracknumber = 0;
+    	tracknumber = 0;
         try {
         	//Initializes music for options screen and loops it
-        	//*music = new MusicPlayer(Game.helpMusic);
-			//*music.l();
+        	music = new MusicPlayer(Game.helpMusic);
+			music.l();
             DisplayMode displayMode =
             HelpScreen.findFirstCompatibleMode(POSSIBLE_MODES);
             HelpScreen.setFullScreen(displayMode);
@@ -80,7 +80,7 @@ public class HelpScreen {
     
     public static void loadImages() {
         //loads images into buffer
-         bgImage = loadImage("images/HelpScreen.jpg");
+         bgImage = loadImage("images/BackgroundTest.png");
          title = loadImage("images/title.png");
 		//add animation here for start screen
     }
@@ -115,32 +115,36 @@ public class HelpScreen {
      public static synchronized void draw(Graphics g) {
     	 loadImages();
     	 g.drawImage(bgImage, 0, 0, null);
-		  g.setColor(Color.black);
+		  g.setColor(Color.white);
 		  Font f = g.getFont();
-		  g.setFont(new Font("SansSerif", Font.BOLD, 12));
-		  g.drawString("Controls:",200,75);
+		  g.setFont(new Font("SansSerif", Font.BOLD, 30));
+		  g.drawString("Controls:",340,75);
 		  g.setFont(f);
 		  //g.setColor(Color.blue);
 		  g.setFont(new Font("SansSerif", Font.BOLD, 12));
           //g.drawString("P1:",406,250);
           g.setFont(f);
-		  g.setColor(Color.black);
+		  g.setColor(Color.white);
           g.drawString("C:",200,100);
-          g.drawString("Brings up controls (in-game)",375,100);
+          g.setFont(new Font("SansSerif", Font.ITALIC, 12));
+          g.drawString("enter tutorial mode to view the controls for each player", 230,100);
           //g.drawString("A, D",406,275);
-          g.drawString("Spacebar:",200,125);
-          g.drawString("shoot",375,125);
-
+          g.setFont(new Font("SansSerif", Font.BOLD, 12));
+          g.drawString("L:",200,125);
+          g.setFont(new Font("SansSerif", Font.ITALIC, 12));
+          g.drawString("restart the round",230,125);
+          
           //g.drawString("W, S",406,300);
-          g.drawString("z:",200,150);
-          g.drawString("before a game starts, this will change the terrain",375,150);
+          g.setFont(new Font("SansSerif", Font.BOLD, 12));
+          g.drawString("Z:",200,150);
+          g.setFont(new Font("SansSerif", Font.ITALIC, 12));
+          g.drawString("before a game starts, this will change the terrain",230,150);
 
           //g.drawString("Q, E",406,325);
-          g.drawString("Control:",200,175);
-          g.drawString("holding while adjusting power/angle makes them go faster",375,175);
-
-          g.drawString("M:",200,200);
-          g.drawString("mute/unmute music",375,200);
+          g.setFont(new Font("SansSerif", Font.BOLD, 12));
+          g.drawString("M:",200,175);
+          g.setFont(new Font("SansSerif", Font.ITALIC, 12));
+          g.drawString("mute/unmute music",230,175);
 
           //g.drawString("1, 2, 3, 4, 5",406,350);
 		//  g.drawString("Left & Right Arrows - Weapons Mode",200,200);
@@ -150,7 +154,7 @@ public class HelpScreen {
 		  g.setFont(new Font("SansSerif", Font.BOLD, 12));
           //g.drawString("P2:",511,250);
           g.setFont(f);
-		  g.setColor(Color.black);
+		  g.setColor(Color.white);
         /*  g.drawString("Change Mode",475,100);
    	   	  g.drawString("Move Tank",475,125);
    	   	  g.drawString("Aim Turret",475,150);
@@ -159,44 +163,43 @@ public class HelpScreen {
 		  g.drawString("Fire & End Turn",475,225); 
 		  */
 		  
-		  g.setFont(new Font("SansSerif", Font.BOLD, 12));
-		  g.setColor(Color.black);
-		  g.drawString("Settings:", 200, 270);
+		  g.setFont(new Font("SansSerif", Font.BOLD, 30));
+		  g.setColor(Color.white);
+		  g.drawString("Settings:", 340, 230);
 		  
           g.setFont(f);  
-   	   	  g.setColor(Color.black);
-		  g.drawString("Cycle Wind: W (in-game)", 200, 290);
-		  g.setColor(Color.black);
+   	   	  g.setColor(Color.white);
+		  g.drawString("Cycle Wind: W", 200, 290);
+		  g.setColor(Color.white);
 		  
 		  if(wind==2){
-			  g.setColor(Color.white);
-			  g.drawString("Wind is completely randomized.", 395, 290);
-			  g.drawString("Wind is randomized after every shot.", 375, 290);
 			  g.setColor(Color.black);
+			  g.drawString("Wind is completely randomized.", 395, 290);
+			  g.setColor(Color.white);
 			  g.drawString("Wind is on and constant.", 435, 290);
 		  }
 		  else if(wind==3){
-			  g.setColor(Color.white);
-			  g.drawString("Wind is on and constant.", 435, 290);
 			  g.setColor(Color.black);
+			  g.drawString("Wind is on and constant.", 435, 290);
+			  g.setColor(Color.white);
 			  g.drawString("Wind is completely randomized.", 395, 290);
 		  }
 		  else if(wind==1){
-			  g.setColor(Color.white);
+			  g.setColor(Color.black);
 			  g.drawString("Wind is Off.", 475, 290);
 			  g.drawString("Wind is on and constant.", 435, 290);
-			  g.setColor(Color.black);
+			  g.setColor(Color.white);
 			  g.drawString("Wind is randomized after every shot.", 375, 290);
 		  }
 		  else{
-			  g.setColor(Color.white);
+			 g.setColor(Color.black);
 			  g.drawString("Wind is randomized after every shot.", 375, 290);
 			  g.drawString("Wind is completely randomized.", 395, 290);
-			  g.setColor(Color.black);
-			  g.drawString("Wind is Off.", 475, 290);  
+			  g.setColor(Color.white);
+			  g.drawString("Wind is Off.", 420, 290);  
+			  g.drawString("Press W for more options.", 500, 290);
 		  }
-		  g.setColor(Color.black);
-		
+		  g.setColor(Color.white);
 		  g.drawString("P1 Tank Color: Up/Down Arrows", 200, 310);
 		  g.drawString("P2 Tank Color: Left/Right Arrows", 200, 330);
 
@@ -204,34 +207,43 @@ public class HelpScreen {
 		  g.setColor(Color.white);
 		  if(p1Color > 0) 
 		  g.drawString("" + tankColors[p1Color-1], 475, 310);
+		  g.setColor(Color.black);
+		  g.drawString("" + tankColors[p1Color], 1000,  310);
 		  if(p2Color > 0) 
 		  g.drawString("" + tankColors[p2Color-1], 475, 330);
+		  g.setColor(Color.black);
+		  g.drawString("" + tankColors[p2Color], 1000,  330);
 		  if(p1Color < 4) 
 		  g.drawString("" + tankColors[p1Color+1], 475, 310);
+		  g.setColor(Color.black);
+		  g.drawString("" + tankColors[p1Color], 1000, 310);
 		  if(p2Color < 4) 
 		  g.drawString("" + tankColors[p2Color+1], 475, 330);
-		  
 		  g.setColor(Color.black);
-		  g.drawString("" + tankColors[p1Color], 475, 310);
-		  g.drawString("" + tankColors[p2Color], 475, 330);
+		  g.drawString("" + tankColors[p2Color], 1000, 330);
+		
+	
+	  g.setColor(Color.white);
+	  g.drawString("" + tankColors[p1Color], 475, 310);
+	  g.drawString("" + tankColors[p2Color], 475, 330);
 		 
 		  
-		  g.setColor(Color.black);
+		  g.setColor(Color.white);
 	//	  g.drawString("Cycle Music: < > ", 200, 350);
 		  g.setColor(Color.white);
 //		  g.drawString(playlist[(tracknumber+6)%7], 475,350);
 		  g.setColor(Color.white);
 //		  g.drawString(playlist[(tracknumber+1)%7], 475,350);
-		  g.setColor(Color.black);
+		  g.setColor(Color.white);
 //		  g.drawString(playlist[tracknumber], 475,350);
 		 
 		  g.setFont(new Font("SansSerif", Font.BOLD, 12));
-		  g.setColor(Color.black);
+		  g.setColor(Color.white);
 		  g.drawString("Weapon:", 200, 400);
 		  g.drawString("Weapon's Effect", 475, 400);
 		  
           g.setFont(f);
-		  g.setColor(Color.black);
+		  g.setColor(Color.white);
 		  g.drawString("Tank Round:", 200, 420);
 		//  g.drawString("Homing Bomb:", 200, 440);
 		//  g.drawString("Herso Bomb:", 200, 460);
@@ -243,7 +255,7 @@ public class HelpScreen {
 		//  g.drawString("50 Damage", 475, 480);
 		  
 		  g.setFont(new Font("SansSerif", Font.BOLD, 12));
-		  g.setColor(Color.black);
+		  g.setColor(Color.white);
 		  g.drawString("Press Esc to Return to the Main Menu.",277,535); 
 
 		  //g.drawString("Press any key to return to the main menu.", 275, 575);
@@ -265,7 +277,7 @@ public class HelpScreen {
 				   DataClass.setP2Tank(p2Color);
 				   DataClass.setwind(wind);
 				   DataClass.setGameState(GameState);
-				  //* music.s();
+				   music.s();
 				   setState = 1;
 			   }
 			   else if (keyCode == KeyEvent.VK_W)
@@ -311,7 +323,7 @@ public class HelpScreen {
 					   p1Color--;
 			   }
 			 
-/*			   else if (keyCode==KeyEvent.VK_COMMA)
+/*			  else if (keyCode==KeyEvent.VK_COMMA)
 			   {
 				   tracknumber = (tracknumber+6)%7;
 
