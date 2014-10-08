@@ -118,7 +118,7 @@ public class HelpScreen {
 		  g.setColor(Color.white);
 		  Font f = g.getFont();
 		  g.setFont(new Font("SansSerif", Font.BOLD, 30));
-		  g.drawString("Controls:",340,75);
+		  g.drawString("Controls:",340,80);
 		  g.setFont(f);
 		  //g.setColor(Color.blue);
 		  g.setFont(new Font("SansSerif", Font.BOLD, 12));
