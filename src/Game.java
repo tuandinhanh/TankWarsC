@@ -163,9 +163,9 @@ public class Game implements KeyListener {
     public boolean muted = false;
     
     public static String gameMusic = "starfox.wav";
-    public static String titleMusic = "starfox.wav";
+    public static String titleMusic = "ffxiii.wav";
     public static String helpMusic = "starfox.wav";
-    public static String creditsMusic = "starfox.wav";
+    public static String creditsMusic = "fanfare.wav";
     		
     public int GameSTATE=1; //determines what gameplay
     //0=dynamic
