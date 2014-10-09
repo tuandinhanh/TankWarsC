@@ -162,10 +162,10 @@ public class Game implements KeyListener {
     public boolean tutorialmode = false;
     public boolean muted = false;
     
-    public static String gameMusic = "ffxiii.wav";
-    public static String titleMusic = "ffxiii.wav";
-    public static String helpMusic = "ffxiii.wav";
-    public static String creditsMusic = "ffxiii.wav";
+    public static String gameMusic = "starfox.wav";
+    public static String titleMusic = "starfox.wav";
+    public static String helpMusic = "starfox.wav";
+    public static String creditsMusic = "starfox.wav";
     		
     public int GameSTATE=1; //determines what gameplay
     //0=dynamic

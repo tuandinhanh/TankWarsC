@@ -202,12 +202,10 @@ public class MainScreen {
 
 		//try to create a new object with user interaction for next goal.
 	      if (keyCode == KeyEvent.VK_SPACE) 
-	      {	
-	      	  music.s();
+	      {
 	      	  
-	      	//  music = new SoundPlayer();
-	      	//  music.load("doom_1.mid");
-	      	//  music.play();
+	    	  music = new MusicPlayer(Game.gameMusic);
+			  music.l();
 	      	  setStart = 1;
 	    	  
 	      }

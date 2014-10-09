@@ -1,3 +1,10 @@
+/HelpScreen$KeyClass.class
+/HelpScreen.class
+/MainScreen$KeyClass.class
+/MainScreen.class
+/MusicPlayer.class
+/Projectile.class
+/ScreenManagement
 /AnimationTest.class
 /Credits.class
 /DataClass.class
@@ -7,16 +14,3 @@
 /Game$FloatHealth2.class
 /Game$MouseClass.class
 /Game.class
-/HelpScreen$KeyClass.class
-/HelpScreen.class
-/MainScreen$KeyClass.class
-/MainScreen.class
-/MusicPlayer.class
-/Projectile.class
-/ScreenManagement
-/SoundPlayer.class
-/Tank.class
-/TutorialScreen$KeyClass.class
-/TutorialScreen.class
-/Weapon.class
-/dataClassTester.class
