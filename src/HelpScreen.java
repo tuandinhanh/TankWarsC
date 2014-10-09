@@ -229,8 +229,11 @@ public class HelpScreen {
 		  g.setColor(Color.white);
 //		  g.drawString(playlist[tracknumber], 475,350);
 		 
-		  g.setFont(new Font("SansSerif", Font.BOLD, 12));
+		  
 		  g.setColor(Color.white);
+		  g.setFont(new Font("SansSerif", Font.BOLD, 30));
+		  g.drawString("Weapons:", 340, 375);
+		  g.setFont(new Font("SansSerif", Font.BOLD, 12));
 		  g.drawString("Weapon:", 200, 400);
 		  g.drawString("Weapon's Effect", 475, 400);
 		  
