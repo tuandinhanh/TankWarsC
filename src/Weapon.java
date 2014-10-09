@@ -1,5 +1,5 @@
 import java.awt.*;
-
+import java.util.Random;
 
 import ScreenManagement.*;
 
@@ -23,6 +23,7 @@ public class Weapon
 	private Sprite TS;
 	private Tank T;
 	private Graphics g;
+	private static final Random random = new Random();
 
 	//constructor for weapon class
 	public Weapon(Game G, Tank tank){
@@ -154,6 +155,7 @@ public class Weapon
 	
 	
 	//makes bullet fall and collide
+	//This is where health is calculated
 	public void GravityAndCollision(Tank Tnk)
 	{
         if(TS.getState()==1)
@@ -163,16 +165,15 @@ public class Weapon
             TS.setVelocityY(TS.getVelocityY() + (TG.Gravf));   //Gravity
            
             // Shot collision detection
-            if (ShotCollision(Tnk.getTankSprite(), TS)) 
-           {
-               Tnk.setHealth(Tnk.getHealth()-10);// subtract 10 points off player 1's health if hit
+            if (ShotCollision(Tnk.getTankSprite(), TS)) {
+               Tnk.setHealth(Tnk.getHealth() - (10 + random.nextInt(7)));// subtract 10 points off player 1's health if hit
                TG.hitTest=2;                 
            }
-            if (ShotCollision(T.getTankSprite(), TS)) 
-           {
-               T.setHealth(T.getHealth()-10);// subtract 10 points off player 1's health if hit
+            
+            if (ShotCollision(T.getTankSprite(), TS)) {
+               T.setHealth(T.getHealth() - (10 + random.nextInt(7)));// subtract 10 points off player 1's health if hit
                TG.hitTest=2;                 
-           }   
+           }
         }
         
 	}//GravityAndCollision end
@@ -195,6 +196,7 @@ public class Weapon
     public boolean ShotCollision(Sprite tank, Sprite shot) {        
         boolean ret = false; 
     
+        int radius = 20; //pixels
         int PlayerLowX = ((Math.round(tank.getX())));
         int PlayerLowY = ((Math.round(tank.getY())));
         int PlayerHighX = ((Math.round(tank.getX())) + (tank.getWidth()));
@@ -216,18 +218,20 @@ public class Weapon
     //            SecondaryTankShot2.setVelocityY(0.5f);
     //        }
         
-        if (ShotLowX > PlayerLowX||ShotHighX>PlayerLowX) {
-            if(ShotLowY> PlayerLowY) {         
-                if (ShotHighX < PlayerHighX||ShotLowX<PlayerHighX) {                        
-                    if (ShotLowY < PlayerHighY) {
-                        CreateHole(shot);
-                        ret = true;     
-                    }
+        if (ShotLowX > PlayerLowX - radius|| ShotHighX > PlayerLowX - radius) {
+            if(ShotLowY > PlayerLowY) {         
+                if (ShotHighX < PlayerHighX + radius || ShotLowX < PlayerHighX - radius) { 
+	                    if (ShotLowY < PlayerHighY + radius) {
+	                        CreateHole(shot);
+	                        ret = true;    
+	                        
+                	}
                 }
             }
         }        
         return ret; 
     }//end ShotCollision Method
+    
     
     
     //creates a crater when it is called by collision
