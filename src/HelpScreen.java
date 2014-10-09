@@ -244,7 +244,7 @@ public class HelpScreen {
 		//  g.drawString("Herso Bomb:", 200, 460);
 		//  g.drawString("The Joker:", 200, 480);
 		  
-		  g.drawString("10 Damage", 475, 420);
+		  g.drawString("10 - 25 Damage", 475, 420);
 		//  g.drawString("20 Damage", 475, 440);
 		//  g.drawString("30 Damage", 475, 460);
 		//  g.drawString("50 Damage", 475, 480);
