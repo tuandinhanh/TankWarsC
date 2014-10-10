@@ -163,10 +163,12 @@ public class Game implements KeyListener {
     public boolean muted = false;
     
     public static String gameMusic = "TankBattle2.wav";
-    public static String titleMusic = "ffxiii.wav";
+    public static String titleMusic = "MainTheme.wav";
     public static String helpMusic = "starfox.wav";
     public static String creditsMusic = "fanfare.wav";
-    		
+    public static String victoryMusic = "Win.wav";	
+    
+    
     public int GameSTATE=1; //determines what gameplay
     //0=dynamic
     //1=turn based
@@ -896,6 +898,7 @@ public class Game implements KeyListener {
     {
         if (health <= 0)
         {
+        	
             int playerNumber = 2;
             if (player.equals(Tank2.getTankSprite()))
                 playerNumber = 1;
@@ -906,10 +909,13 @@ public class Game implements KeyListener {
             if(explosionFrames < 150) {
             	g.drawImage(BOOM.getImage(), Math.round(player.getX() - 14), Math.round(player.getY() - 75), null);
             	explosionFrames++;
+            	music.s();
+            	
+            	
             }
             // Message that displays when game is over
             g.drawString("GAME OVER: PLAYER " + playerNumber + " WINS",300,230);
-            g.drawString("Press 'Space' to play again", 310, 250);
+            g.drawString("Press 'L' to play again", 310, 250);
             turn = 3; // When turn is equal to 3, neither player can go, this will prevent players from continuing to fire
              //Adds sounds after game
              if(playerNumber==1){ // Player 1 wins
@@ -1576,16 +1582,27 @@ Mode 3 is Weapon Selection
  	      {
     		  helpScreenOpen = 1;
     		  titleScreenOpen = 0;
+    		  music.s();
+    	  	  music = new MusicPlayer(helpMusic);
+    	  	  music.l();
  	      }
       }
       if(helpScreenOpen == 1)
       {
+    	  //Alright, so this does work. But the music restarts every time you press a key. 
+    	  //I think I may have music.s(); in the wrong place, but when I tried to place
+    	  //it elsewhere, the whole thing crashed. SO FML
+    	
 		   if (keyCode == KeyEvent.VK_ESCAPE) 
 		   {
 			   titleScreenOpen = 1;
 			   helpScreenOpen = 0;
 		//	   DataClass.setGameState(GameState);
 		//	   setState = 1;
+			   //Oh yeah, this music too. 
+			  music.s();
+			   music = new MusicPlayer(titleMusic);
+			   music.l();
 		   }
 		   else if (keyCode == KeyEvent.VK_W)
 		   {
@@ -1598,17 +1615,7 @@ Mode 3 is Weapon Selection
 				   HelpScreen.wind=0;
 			   }
 		   }
-		/*   else if (keyCode == KeyEvent.VK_G)
-		   {
-			   if(GameState==0)
-			   {
-				   GameState=1;
-			   }
-			   else
-			   {
-				   GameState=0;
-			   }
-		   } */
+		  
 		   else if (keyCode == KeyEvent.VK_LEFT)
 		   {
 			   if(HelpScreen.p2Color > 0)
