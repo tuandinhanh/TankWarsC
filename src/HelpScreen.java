@@ -317,8 +317,8 @@ public class HelpScreen {
 				   if(p1Color > 0)
 					   p1Color--;
 			   }
-			 
-/*			  else if (keyCode==KeyEvent.VK_COMMA)
+		/*	 
+			  else if (keyCode==KeyEvent.VK_COMMA)
 			   {
 				   tracknumber = (tracknumber+6)%7;
 
@@ -327,7 +327,7 @@ public class HelpScreen {
 			   {
 				   tracknumber = (tracknumber+1)%7;
 			   }
-*/			 
+		*/	 
 			}
 	    }
 

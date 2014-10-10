@@ -5,8 +5,10 @@
 import java.awt.*;
 
 import javax.swing.ImageIcon;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyAdapter;
+
 import ScreenManagement.*;
 
 
@@ -26,7 +28,11 @@ public class MainScreen {
     protected static int testLoop = 1;
     public static MusicPlayer music;
     protected static ScreenManager testScreen1, testScreen2;
-    //End of variables for testing purposes.    
+    //End of variables for testing purposes.  
+    
+    public boolean on = true;
+    
+   
     
     private static final DisplayMode POSSIBLE_MODES[] = {
         new DisplayMode(800, 600, 32, 0),
@@ -46,7 +52,7 @@ public class MainScreen {
     	StartScreen = new ScreenManager();;
         try {
         	//Initializes music for main screen
-        	music = new MusicPlayer(Game.titleMusic);
+        	music = new MusicPlayer(Game.gameMusic);
 			music.l();
         	
             DisplayMode displayMode =
@@ -203,13 +209,12 @@ public class MainScreen {
 		//try to create a new object with user interaction for next goal.
 	      if (keyCode == KeyEvent.VK_SPACE) 
 	      {
-	      	  
-	    	  music = new MusicPlayer(Game.gameMusic);
-			  music.l();
+	    	  
 	      	  setStart = 1;
 	    	  
 	      }
-	      else if (keyCode == KeyEvent.VK_ESCAPE) 
+	    
+        else if (keyCode == KeyEvent.VK_ESCAPE) 
           {
 	    	  System.exit(-1);
 		  }	      
@@ -226,11 +231,13 @@ public class MainScreen {
 	      
        
     	}
+    	
     }
     
     public void setTestMode(Boolean test)
     {
     	testMode = test; 
     }
-
+    
+   
 }

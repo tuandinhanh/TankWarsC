@@ -162,7 +162,7 @@ public class Game implements KeyListener {
     public boolean tutorialmode = false;
     public boolean muted = false;
     
-    public static String gameMusic = "starfox.wav";
+    public static String gameMusic = "TankBattle2.wav";
     public static String titleMusic = "ffxiii.wav";
     public static String helpMusic = "starfox.wav";
     public static String creditsMusic = "fanfare.wav";
@@ -413,9 +413,10 @@ public class Game implements KeyListener {
         screen = new ScreenManager();
             
 
-        String track = gameMusic;
-    	music = new MusicPlayer(track);
+        String track2 = titleMusic;
+    	music = new MusicPlayer(track2);
 		music.l();
+		
         try
         {
         DisplayMode displayMode =
@@ -605,6 +606,7 @@ public class Game implements KeyListener {
             Tank2.setTurretAngleX(Math.round(Tank2.getTankSprite().getX() + (int)(Tank2.getTankSprite().getWidth()*.5)));
             Tank2.setTurretAngleY(Math.round(Tank2.getTankSprite().getY() - (int)(Tank2.getTankSprite().getHeight())));
             TankCreated = true;
+            
         } // end tank creation
         
         T1Weapon.setGraphics(g);
@@ -1033,7 +1035,16 @@ Mode 3 is Weapon Selection
             Tank1.setHealth(0);
             Tank2.setHealth(0);
             hitTest = 1;
+            
       } 
+      
+     
+    	
+    	        
+    	
+    	  
+      
+      
       
       if (keyCode == KeyEvent.VK_O) {
         if (PauseMenuOpen == false)// open pause menu
@@ -1053,12 +1064,13 @@ Mode 3 is Weapon Selection
     		  muted = true;
     	  }
     	  else {
+    		  
     	        String track = gameMusic;
     	    	music = new MusicPlayer(track);
     			music.l();
   				muted = false;
     	  }
-
+    	  
       }
       
       if (keyCode == KeyEvent.VK_U) {
@@ -1547,7 +1559,11 @@ Mode 3 is Weapon Selection
 		      TankImage2 = loadImage(DataClass.getP2Tank());
 		      TankStill.addFrame(TankImage,300);
 		      TankStill2.addFrame(TankImage2,300);
-
+		      music.s();
+		      String track = gameMusic;
+  	          music = new MusicPlayer(track);
+  			  music.l();
+			
     		  titleScreenOpen = 0;
     	  }
     	  
